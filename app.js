@@ -34,15 +34,8 @@ app.get('/', async (req, res) => {
             });
         }
 
-        console.log(jsonResponse); // Logs all the information from the API
-
-        res.send({
-            ip: jsonResponse.ip,
-            city: jsonResponse.city,
-            region: jsonResponse.region,
-            country: jsonResponse.country,
-            loc: jsonResponse.loc,
-        });
+        console.log(jsonResponse); 
+        res.send(`Now i Know your location IP: ${jsonResponse.ip}, City: ${jsonResponse.city} , Region : ${jsonResponse.region}, Country : ${jsonResponse.country}, Location : ${jsonResponse.loc}`);
     } catch (error) {
         console.error('Error fetching address:', error);
         res.status(500).send('Unable to fetch address information');
